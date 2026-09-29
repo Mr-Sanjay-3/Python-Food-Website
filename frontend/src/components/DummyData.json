@@ -1,0 +1,10 @@
+[
+  { "id": 1, "name": "Burger & Fries", "category": "Burgers", "price": 100,"img":""},
+  { "id": 2, "name": "Cheeseburger", "category": "Burgers", "price": 77,"img":""},
+  { "id": 3, "name": "Pepperoni Pizza", "category": "Pizza", "price":88,"img":"" },
+  { "id": 4, "name": "Margherita Pizza", "category": "Pizza", "price": 99,"img":""},
+  { "id": 5, "name": "Crunchy Taco", "category": "Tacos", "price": 300,"img":""},
+  { "id": 6, "name": "Burrito Bowl", "category": "Tacos", "price": 100,"img":""},
+  { "id": 7, "name": "Chocolate Shake", "category": "Drinks", "price": 150,"img":""},
+  { "id": 8, "name": "Iced Coffee", "category": "Drinks", "price": 200,"img":""}
+]

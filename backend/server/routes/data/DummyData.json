@@ -1,0 +1,10 @@
+[
+  { "id": 1, "name": "Burger & Fries", "category": "Burgers", "price": 100,"imageuri":"https://media.istockphoto.com/id/520496564/photo/delicious-hamburger-on-wooden-table.jpg?s=612x612&w=0&k=20&c=NRgBjQnBNv5FYArZasP7fk1a8Q7uFrdk0_uiwTzq-T0="},
+  { "id": 2, "name": "Cheeseburger", "category": "Burgers", "price": 77,"imageuri": "https://media.istockphoto.com/id/495520218/photo/delicious-hamburger-on-wood.jpg?s=612x612&w=0&k=20&c=8hRZHyNMBuK9h3ulgyHOIkjM2nYJqVLLl8WGCIlIuOw="},
+  { "id": 3, "name": "Pepperoni Pizza", "category": "Pizza", "price":88,"imageuri": "https://media.istockphoto.com/id/1086140416/photo/tasty-pepperoni-pizza-and-cooking-ingredients-tomatoes-basil-on-black-concrete-background-top.jpg?s=612x612&w=0&k=20&c=gKWfVbYL9butzkl5v-nElErF5tVikTHRnvWPdX8mPdc=" },
+  { "id": 4, "name": "Margherita Pizza", "category": "Pizza", "price": 99,"imageuri": "https://media.istockphoto.com/id/1285272852/photo/italian-pizza-margarita-and-ingredients-for-its-preparation-on-black-background-top-view-free.jpg?s=612x612&w=0&k=20&c=2Jw-fClWQcpLtX4nWgmeCalNJgyHi6GnQfiFxRIR734="},
+  { "id": 5, "name": "Crunchy Taco", "category": "Tacos", "price": 300,"imageuri": "https://media.istockphoto.com/id/2021972010/photo/3-beef-birria-tacos-stacked-on-black-plate.jpg?s=612x612&w=0&k=20&c=Tu-8IGoNgS4U4_Q-IP-d1m4W9yadFvT8o2rDQqvSlLQ="},
+  { "id": 6, "name": "Burrito Bowl", "category": "Tacos", "price": 100,"imageuri": "https://media.istockphoto.com/id/1300212681/photo/homemade-healthy-chicken-burrito-bowl.jpg?s=612x612&w=0&k=20&c=gxGhaGj7O47gjHXkhS_WyfHZ7u_i1aKvXUY7cx2Z-5Y="},
+  { "id": 7, "name": "Chocolate Shake", "category": "Drinks", "price": 150,"imageuri": "https://media.istockphoto.com/id/2168074895/photo/chocolate-milkshake-blended-smoothie.jpg?s=612x612&w=0&k=20&c=lb3sPWNuQPzv71VT20bI2uH3lLAe9AIF7YzZSUhCPhI="},
+  { "id": 8, "name": "Iced Coffee", "category": "Drinks", "price": 200,"imageuri": "https://media.istockphoto.com/id/1663243768/photo/mocha-creamy-delight-with-ice-cream-and-chocolate-chip-and-coffee-beans-served-in-glass.jpg?s=612x612&w=0&k=20&c=tYUgHxuFBPZ97YkGxs6I3u-8fxf3UGXeIoDGB2iy-t0="}
+]

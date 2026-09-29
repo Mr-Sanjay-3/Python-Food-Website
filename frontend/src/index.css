@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Sofia Sans", sans-serif;
+  --color-primary: #e63946;
+  --color-secondary: #f4a261;
+  --color-accent: #2a9d8f;
+  --color-dark: #1d3557;
+}
+
+body {
+  background: #0D0D0D;
+  color: #FFFFFF;
+  overflow-x: hidden;
+}   
