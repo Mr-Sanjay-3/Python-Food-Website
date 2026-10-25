@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/6.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -78,11 +79,11 @@ WSGI_APPLICATION = 'server.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'foodweb',
-        'USER':'avnadmin',
-        'HOST':'foodie-mysql-ensproxy-9f0f.i.aivencloud.com',
-        'PORT':19271,
-        'PASSWORD': 'REDACTED_SECRET'
+        'NAME': os.environ.get('DATABASE'),
+        'USER':os.environ.get('USER'),
+        'HOST':os.environ.get('HOST'),
+        'PORT':int(os.environ.get("PORT", 19271)),
+        'PASSWORD':  os.environ.get('PASSWORD')
     }
 }
 
