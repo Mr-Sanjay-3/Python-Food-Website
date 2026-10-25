@@ -3,6 +3,7 @@ import { ShoppingBasket, X, Plus, Minus, Trash2, ArrowLeft, CheckCircle } from '
 import { useNavigate } from 'react-router-dom';
 import CartContext from '../../context/CartContext';
 import LazyImage from './LazyImage';
+import { API_BASE_URL } from '../../config/api';
 
 const Cart = ({ items: propItems, setItems: propSetItems }) => {
   const navigate = useNavigate();
@@ -92,7 +93,12 @@ const Cart = ({ items: propItems, setItems: propSetItems }) => {
 
     try {
       setIsSubmitting(true);
-      const url = process.env.API_URL;
+      const url = (
+        import.meta.env.VITE_API_URI ||
+        import.meta.env.API_URI ||
+        API_BASE_URL ||
+        'https://foodweb-aaoi.onrender.com'
+      ).replace(/\/+$/, '');
       const response = await fetch(`${url}/api/orders/create/`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

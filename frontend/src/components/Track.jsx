@@ -11,6 +11,7 @@ import {
   AlertCircle,
   ArrowRight
 } from 'lucide-react';
+import { API_BASE_URL } from '../config/api';
 
 const TRACKING_STEPS = [
   { key: 'PENDING', label: 'Order Placed', desc: 'Restaurant has received your order' },
@@ -41,7 +42,12 @@ const Track = () => {
     if (isManual) setIsRefreshing(true);
 
     try {
-      const url = process.env.API_URL;
+      const url = (
+        import.meta.env.VITE_API_URI ||
+        import.meta.env.API_URI ||
+        API_BASE_URL ||
+        'https://foodweb-aaoi.onrender.com'
+      ).replace(/\/+$/, '');
       const res = await fetch(`${url}/api/orders/${id}/`);
       const data = await res.json();
 

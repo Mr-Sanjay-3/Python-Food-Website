@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import { BadgePlus, Loader2, Sparkles, CheckCircle2, RefreshCw, AlertCircle, Search, X } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import LazyImage from './SubComponents/LazyImage';
+import { API_BASE_URL } from '../config/api';
 
 export default function FoodMenu() {
   const [activeCategory, setActiveCategory] = useState('All');
@@ -17,10 +18,17 @@ export default function FoodMenu() {
 
   // Fetch foods directly from Django backend
   const fetchFoods = async () => {
+    const url = (
+      import.meta.env.VITE_API_URI ||
+      import.meta.env.API_URI ||
+      API_BASE_URL ||
+      'https://foodweb-aaoi.onrender.com'
+    ).replace(/\/+$/, '');
+
     setIsLoading(true);
     setError(null);
     try {
-      const url = process.env.API_URL;
+      // console.log('Loading foods from:', `${url}/api/foodlist/`);
       const response = await fetch(`${url}/api/foodlist/`);
       if (!response.ok) throw new Error(`HTTP ${response.status}: Failed to load food items`);
       const data = await response.json();

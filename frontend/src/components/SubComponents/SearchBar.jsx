@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect, useMemo } from 'react';
 import { SearchIcon, BadgePlus, Loader2, Sparkles, X, Check } from 'lucide-react';
 import { useCart } from '../../context/CartContext';
 import LazyImage from './LazyImage';
+import { API_BASE_URL } from '../../config/api';
 
 const SearchBar = ({ placeholder = "Search food, burger, pizza, biryani..." }) => {
   const [allFoods, setAllFoods] = useState([]);
@@ -19,7 +20,12 @@ const SearchBar = ({ placeholder = "Search food, burger, pizza, biryani..." }) =
     const fetchFoods = async () => {
       setIsLoading(true);
       try {
-        const url = process.env.API_URL;
+        const url = (
+          import.meta.env.VITE_API_URI ||
+          import.meta.env.API_URI ||
+          API_BASE_URL ||
+          'https://foodweb-aaoi.onrender.com'
+        ).replace(/\/+$/, '');
         const response = await fetch(`${url}/api/foodlist/`);
         if (!response.ok) throw new Error(`HTTP error ${response.status}`);
         const data = await response.json();
