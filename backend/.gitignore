@@ -4,3 +4,6 @@ dbdata/
 SeedData.py
 __init__.py
 /dev/null
+__pycache__/
+*.pyc
+.env   
