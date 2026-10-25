@@ -77,8 +77,12 @@ WSGI_APPLICATION = 'server.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'foodweb',
+        'USER':'avnadmin',
+        'HOST':'foodie-mysql-ensproxy-9f0f.i.aivencloud.com',
+        'PORT':19271,
+        'PASSWORD': 'REDACTED_SECRET'
     }
 }
 
@@ -129,6 +133,10 @@ MAILERS = {
     },
 }
 
-CORS_ALLOWED_ORIGINS=[
+CORS_ALLOWED_ORIGINS = [
     'http://localhost:5173',
+    'http://127.0.0.1:5173',
+    'http://localhost:5174',
+    'http://127.0.0.1:5174',
 ]
+CORS_ALLOW_ALL_ORIGINS = True

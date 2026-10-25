@@ -17,6 +17,9 @@ import GlassStrikLeft from '../assets/svg/Group8432.svg'
 import Seekleav from '../assets/svg/SeekPng.svg'
 import SearchBar from './SubComponents/SearchBar'
 
+import Orenge from '../assets/svg/Orange.svg';
+import BulletCurls from '../assets/svg/Group 8438.svg'
+
 const Home = () => {
 
   return (
@@ -24,7 +27,7 @@ const Home = () => {
 
  <>
 
- <div className='w-full min-h-screen flex flex-col lg:flex-row relative overflow-hidden p-4 '>
+ <div className='w-full min-h-screen flex flex-col lg:flex-row relative overflow-x-hidden p-4 '>
   
   {/* Slogan Section */}
   <div className='text-white mt-10 w-full lg:w-1/2 z-10' id='slogon'>
@@ -35,7 +38,7 @@ const Home = () => {
    </div>
    
    {/* Quotes */}
-   <h2 className=' md:text-6xl text-4xl font-sofia font-bold ml-6 lg:ml-7 leading-tight'>
+ <h2 className=' md:text-6xl text-4xl font-sofia font-bold ml-6 lg:ml-7 leading-tight'>
      <span className='text-white'>We're </span>
      <span className='text-[#F54748]'>Serious </span>
      <span className='text-white'>For </span> 
@@ -46,6 +49,8 @@ const Home = () => {
      <span className='text-white'>.</span>
      <img src={RedFireStrike} size={"12px"} className='  w-36' alt="" />
    </h2>
+<img src={Orenge} alt="Orenge" className=' absolute left-[560px] top-28 '/>
+
 
 
    <p className=' ml-7 mt-4 text-[13px] md:text-base'> Best cooks and best delivery gus all at your servic.<br /> Hot tasty food reach you in 30 minutes.</p>
@@ -53,41 +58,44 @@ const Home = () => {
   </div>
 
   {/* Visuals / Images Section */}
-  <div className="w-full lg:w-1/2 flex justify-center items-center mt-10 lg:mt-0 min-h-[450px]  " id='1'>
+  <div className="w-full lg:w-1/2 flex justify-center items-center mt-10 lg:mt-0 min-h-[45  0px]  " id='1'>
     {/* Background Circle - Scales scaling dynamically using aspect-square */}
+    <div className="bg-[#F65F5F] rounded-full  w-72 sm:w-80 md:w-[520px]   aspect-square rounded-b-full  relative flex items-center justify-center">
 
-    <div className="bg-[#F65F5F] rounded-full  w-72 sm:w-80 md:w-[400px] aspect-square rounded-b-full  relative flex items-center justify-center">
-
- 
        {/* Main Character Image Group */}
        <div className="absolute bottom-6 w-[85%] z-10 flex justify-center ">
  <img 
       src={Ellipse} 
       alt="" 
-      className="absolute bottom-[-50px] w-[350px] sm:w-[350px] md:w-[480px] max-w-none aspect-square z-10"  
+      className="absolute bottom-[-50px] z-30 w-[350px] sm:w-[350px] md:w-[600px] max-w-none aspect-square "  
     />
-             <img src={Girl} alt="girl Holding Pizza" className='w-full  max-w-[340px]  rounded-[23%]  ' />
-         <img src={FireIcon} alt="" className='absolute -top-6 left-1/2 -translate-x-1/2 w-8 h-8' />
+ <div className="flex justify-center  align-middle   overflow-hidden  rounded-full w-[800px]   h-full"> 
+               <img src={Girl} alt="girl Holding Pizza" className='w-full  max-w-[380px]   ' />
+            </div>
+         <img src={FireIcon} alt="" className='   absolute -top-7 right-22 md:right-44 -translate-x-1/2 w-8 h-8' />
          <img src={GlassStrikRight} alt="FireStork" className='absolute md:top-[70px] md:right-20 top-12 sm:right-16 sm:top-14  right-14 w-6 z-10' />
          <img src={GlassStrikLeft} alt="FireStrok" className='absolute md:top-20   md:left-20 left-12 top-14   w-6' />
          {/* Punidha */}
-         <img src={Seekleav} className='absolute sm:w-28 w-24 -right-12 top-6' alt="" />
+         <img src={Seekleav} className='absolute sm:w-28 w-24 -right-12 md:-top-4 top-6' alt="" />
 
          
        </div> 
 
        {/* Floating Meals  */}
        <div className="absolute inset-0 w-full h-full pointer-events-none">
-         <img src={Meal1} alt="" className='absolute -left-10 z-10 top-2/4 w-16 sm:w-20 md:w-24' />
-         <img src={Meal2} alt="" className='absolute left-16 z-10 -bottom-8 w-16 sm:w-20 md:w-24' />
-         <img src={Meal3} alt="" className='absolute bottom-[-20px] left-2/3 w-20 sm:w-20 md:w-24 z-10' />
-         <img src={Meal4} alt="" className='absolute -right-10 bottom-1/3 w-20 sm:w-20 md:w-24 z-10' />
+         <img src={Meal1} alt="" className='absolute -left-10 z-10 top-2/4 w-16 sm:w-20 md:w-28' />
+         <img src={Meal2} alt="" className='absolute left-16 z-10 -bottom-8 w-16 sm:w-20 md:w-28' />
+         <img src={Meal3} alt="" className='absolute bottom-[-20px] left-2/3 w-20 sm:w-20 md:w-28 z-10' />
+         <img src={Meal4} alt="" className='absolute -right-18 bottom-1/3 w-20 sm:w-20 md:w-32 z-10' />
        </div>
 
     </div>
+
   </div>
 
  </div>
+    <img src={BulletCurls} alt="" className=' absolute right-0 top-36 md:top-40 -z-20' />
+
 </>
 
  

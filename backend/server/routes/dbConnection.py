@@ -1,31 +1,34 @@
-import mysql.connector;
-from mysql.connector  import Error;
+import mysql.connector
+from mysql.connector import Error
 from dotenv import load_dotenv
 from pathlib import Path
 import os
 
-# env_path =Path(".env");
-# load_dotenv(dotenv_path=env_path);
-# print(os.getenv('USER'))
+# Load .env from current directory (routes/.env) or parent directories
+env_path = Path(__file__).resolve().parent / ".env"
+if not env_path.exists():
+    env_path = Path(__file__).resolve().parent.parent.parent / ".env"
 
-
+load_dotenv(env_path, override=True)
 
 
 def get_connection():
-        
     try:
         conn = mysql.connector.connect(
-            user= 'root',
-            password ='KittenRoy',
-            host ='127.0.0.1',
-            port =3306,
-            database='foodweb'
-        
-        )   
+            user=os.getenv("USER"),
+            password=os.getenv("PASSWORD"),
+            host=os.getenv("HOST"),
+            port=int(os.getenv("PORT", 19271)),
+            database=os.getenv("DATABASE"),
+        )
         return conn
-
     except Error as err:
-        print(f"Error : on connection {err}")
-        return None;  
+        print(f"Error on connection: {err}")
+        return None
 
 
+if __name__ == "__main__":
+    conn = get_connection()
+    if conn and conn.is_connected():
+        print("Status: DB Connected successfully")
+        conn.close()
