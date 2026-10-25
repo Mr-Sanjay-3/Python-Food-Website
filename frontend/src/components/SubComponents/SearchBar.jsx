@@ -19,7 +19,8 @@ const SearchBar = ({ placeholder = "Search food, burger, pizza, biryani..." }) =
     const fetchFoods = async () => {
       setIsLoading(true);
       try {
-        const response = await fetch('http://localhost:8000/api/foodlist/');
+        const url = process.env.API_URL;
+        const response = await fetch(`${url}/api/foodlist/`);
         if (!response.ok) throw new Error(`HTTP error ${response.status}`);
         const data = await response.json();
         if (isMounted && Array.isArray(data)) {
