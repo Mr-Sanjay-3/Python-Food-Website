@@ -41,7 +41,8 @@ const Track = () => {
     if (isManual) setIsRefreshing(true);
 
     try {
-      const res = await fetch(`http://localhost:8000/api/orders/${id}/`);
+      const url = process.env.API_URL;
+      const res = await fetch(`${url}/api/orders/${id}/`);
       const data = await res.json();
 
       if (!res.ok || !data.success) {

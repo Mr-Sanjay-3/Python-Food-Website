@@ -92,7 +92,8 @@ const Cart = ({ items: propItems, setItems: propSetItems }) => {
 
     try {
       setIsSubmitting(true);
-      const response = await fetch('http://localhost:8000/api/orders/create/', {
+      const url = process.env.API_URL;
+      const response = await fetch(`${url}/api/orders/create/`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
