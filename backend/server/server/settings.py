@@ -12,9 +12,22 @@ https://docs.djangoproject.com/en/6.1/ref/settings/
 
 from pathlib import Path
 import os
+from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+# Load environment variables from .env
+for env_dir in [
+    BASE_DIR,                         # backend/server/.env
+    BASE_DIR.parent,                  # backend/.env
+    BASE_DIR / 'routes',              # backend/server/routes/.env
+    BASE_DIR.parent.parent,           # project root .env
+]:
+    env_file = env_dir / ".env"
+    if env_file.exists():
+        load_dotenv(env_file, override=True)
+        break
 
 
 # Quick-start development settings - unsuitable for production
@@ -26,7 +39,22 @@ SECRET_KEY = 'django-insecure-125393(wdctisxxu!d#@$v8+-=-!t5)&%4bv-r7iqo8x2u@gmt
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '*',
+    'foodweb-aaoi.onrender.com',
+    'foodweb-python.vercel.app',
+    'localhost',
+    '127.0.0.1',
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://foodweb-python.vercel.app',
+    'https://foodweb-aaoi.onrender.com',
+    'http://localhost:5173',
+    'http://127.0.0.1:5173',
+    'http://localhost:8000',
+    'http://127.0.0.1:8000',
+]
 
 
 # Application definition
@@ -79,11 +107,11 @@ WSGI_APPLICATION = 'server.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME':os.environ.get('DATABASE'),
-        'USER':os.environ.get('USER'),
-        'HOST':os.environ.get('HOST'),
-        'PORT':int(os.environ.get("PORT", 19271)),
-        'PASSWORD':os.environ.get('PASSWORD')
+        'NAME': os.environ.get('DATABASE', 'foodweb'),
+        'USER': os.environ.get('USER', 'avnadmin'),
+        'HOST': os.environ.get('HOST', 'foodie-mysql-ensproxy-9f0f.i.aivencloud.com'),
+        'PORT': int(os.environ.get("PORT", 19271)),
+        'PASSWORD': os.environ.get('PASSWORD', 'REDACTED'),
     }
 }
 

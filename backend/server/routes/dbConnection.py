@@ -4,12 +4,14 @@ from dotenv import load_dotenv
 from pathlib import Path
 import os
 
-# Load .env from current directory (routes/.env) or parent directories
-env_path = Path(__file__).resolve().parent / ".env"
-if not env_path.exists():
-    env_path = Path(__file__).resolve().parent.parent.parent / ".env"
-
-load_dotenv(env_path, override=True)
+for p in [
+    Path(__file__).resolve().parent / ".env",
+    Path(__file__).resolve().parent.parent / ".env",
+    Path(__file__).resolve().parent.parent.parent / ".env",
+]:
+    if p.exists():
+        load_dotenv(p, override=True)
+        break
 
 
 def get_connection():
