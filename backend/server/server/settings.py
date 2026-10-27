@@ -104,11 +104,11 @@ WSGI_APPLICATION = 'server.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.environ.get('DATABASE', 'foodweb'),
-        'USER': os.environ.get('USER', 'avnadmin'),
-        'HOST': os.environ.get('HOST', 'foodie-mysql-ensproxy-9f0f.i.aivencloud.com'),
+        'NAME': os.environ.get('DATABASE'),
+        'USER': os.environ.get('USER'),
+        'HOST': os.environ.get('HOST'),
         'PORT': int(os.environ.get("PORT", 19271)),
-        'PASSWORD': os.environ.get('PASSWORD', 'REDACTED'),
+        'PASSWORD': os.environ.get('PASSWORD'),
     }
 }
 
