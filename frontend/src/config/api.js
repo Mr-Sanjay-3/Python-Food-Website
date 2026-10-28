@@ -14,13 +14,12 @@ const isLocalhost = typeof window !== 'undefined' &&
 // Primary URL
 export const API_BASE_URL = rawEnvUrl
   ? rawEnvUrl
-  : (isLocalhost ? 'http://localhost:8000' : 'https://foodweb-aaoi.onrender.com');
-
+  : (isLocalhost ? 'http://localhost:8000' : 'https://python-food-website.onrender.com');
 // Fallback candidates
 export const API_URL_CANDIDATES = [
   API_BASE_URL,
   'http://localhost:8000',
-  'https://foodweb-aaoi.onrender.com',
+  'https://python-food-website.onrender.com',
 ].filter((url, idx, self) => url && self.indexOf(url) === idx);
 
 // Safe fetch helper with automatic retry on alternative endpoints
